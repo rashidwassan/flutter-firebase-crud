@@ -1,0 +1,33 @@
+name: flutter_firebase
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  velocity_x: ^3.5.1
+  font_awesome_flutter: ^10.1.0
+  firebase_core: ^1.20.1
+  cloud_firestore: ^3.4.4
+
+dev_dependencies:
+  lint: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+
