@@ -4,8 +4,8 @@ import 'package:velocity_x/velocity_x.dart';
 
 class SocialIconButtonsRow extends StatelessWidget {
   const SocialIconButtonsRow({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,7 @@ class SocialIconButtonsRow extends StatelessWidget {
 
 class SocialButtonWithShadow extends StatelessWidget {
   const SocialButtonWithShadow(
-      {Key? key, required this.icon, required this.color, this.onPressed})
-      : super(key: key);
+      {super.key, required this.icon, required this.color, this.onPressed});
 
   final Color color;
   final IconData icon;
@@ -51,10 +50,11 @@ class SocialButtonWithShadow extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
+          padding: MaterialStateProperty.all(EdgeInsets.zero),
           elevation: MaterialStateProperty.all(12),
           shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          ),
           backgroundColor: MaterialStateProperty.all(color),
           shadowColor: MaterialStateProperty.all(color),
         ),

@@ -6,8 +6,8 @@ class PrimaryTextField extends StatefulWidget {
     this.hintText = '',
     required this.controller,
     this.prefixIcon,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final IconData? prefixIcon;
   final String hintText;
   final TextEditingController controller;
@@ -30,18 +30,19 @@ class _PrimaryTextFieldState extends State<PrimaryTextField> {
             .bodyText1!
             .copyWith(fontWeight: FontWeight.bold, fontSize: 16),
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(top: 14),
-            prefixIcon: widget.prefixIcon != null
-                ? Icon(
-                    widget.prefixIcon,
-                    size: 20,
-                    color: Theme.of(context).colorScheme.onBackground,
-                  )
-                : const SizedBox.shrink(),
-            border: InputBorder.none,
-            hintText: widget.hintText,
-            hintStyle:
-                const TextStyle(fontSize: 17, fontWeight: FontWeight.normal)),
+          contentPadding: const EdgeInsets.only(top: 14),
+          prefixIcon: widget.prefixIcon != null
+              ? Icon(
+                  widget.prefixIcon,
+                  size: 20,
+                  color: Theme.of(context).colorScheme.onBackground,
+                )
+              : const SizedBox.shrink(),
+          border: InputBorder.none,
+          hintText: widget.hintText,
+          hintStyle:
+              const TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
+        ),
       ).px(12).py(2.5),
     );
   }

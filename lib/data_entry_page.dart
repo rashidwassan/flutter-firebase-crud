@@ -5,6 +5,7 @@ import 'package:flutter_firebase/components/blur_container.dart';
 import 'package:flutter_firebase/components/buttons.dart';
 import 'package:flutter_firebase/constants/images.dart';
 import 'package:flutter_firebase/models/user.dart';
+import 'package:flutter_firebase/users_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'components/textfields.dart';
@@ -63,7 +64,10 @@ class _DataEntryScreenState extends State<DataEntryScreen>
     );
 
     final userDataInJsonFormat = user.toJson();
-    await studentsCollection.doc().set(userDataInJsonFormat);
+    await studentsCollection.doc(nameController.text).set(userDataInJsonFormat);
+
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => UsersListPage()));
   }
 
   @override

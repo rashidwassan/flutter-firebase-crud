@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Row buildSignInGradientButtonRow(
-    BuildContext context, String text, Function() onPressed) {
+  BuildContext context,
+  String text,
+  Function() onPressed,
+) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.end,
     children: [
-      Text(text,
-          style: Theme.of(context).textTheme.headline4!.copyWith(
+      Text(
+        text,
+        style: Theme.of(context).textTheme.headline4!.copyWith(
               fontWeight: FontWeight.w600,
-              color: Theme.of(context).colorScheme.onBackground)),
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
+      ),
       16.widthBox,
-      Container(
+      DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(500),
           gradient: RadialGradient(
@@ -28,7 +34,8 @@ Row buildSignInGradientButtonRow(
           height: 45,
           child: MaterialButton(
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(500)),
+              borderRadius: BorderRadius.circular(500),
+            ),
             onPressed: onPressed,
             child: Icon(
               Icons.arrow_forward,
