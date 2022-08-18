@@ -11,7 +11,6 @@ import 'package:velocity_x/velocity_x.dart';
 import 'components/textfields.dart';
 
 class DataEntryScreen extends StatefulWidget {
-  static const String id = '/signup';
   const DataEntryScreen({super.key});
 
   @override
@@ -51,13 +50,13 @@ class _DataEntryScreenState extends State<DataEntryScreen>
     educationalYearsController.dispose();
   }
 
-  // method for extracting the data from textfields and saving it to firebase storage
+  // method for extracting the data from text fields and saving it to firebase storage
 
   // initializing Firestore instance pointing towards the students collection
   final studentsCollection = FirebaseFirestore.instance.collection('students');
 
   saveUserData() async {
-    User user = User(
+    final User user = User(
       name: nameController.text,
       age: int.parse(ageController.text),
       educationalYears: int.parse(educationalYearsController.text),
@@ -65,9 +64,8 @@ class _DataEntryScreenState extends State<DataEntryScreen>
 
     final userDataInJsonFormat = user.toJson();
     await studentsCollection.doc(nameController.text).set(userDataInJsonFormat);
-
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => UsersListPage()));
+        context, MaterialPageRoute(builder: (context) => StudentListPage()));
   }
 
   @override

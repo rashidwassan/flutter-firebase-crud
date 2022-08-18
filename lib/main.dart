@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase/data_entry_page.dart';
+import 'package:flutter_firebase/users_list.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           onError: Colors.white,
         ),
       ),
-      home: const DataEntryScreen(),
+      home: const StudentListPage(),
     );
   }
 }
