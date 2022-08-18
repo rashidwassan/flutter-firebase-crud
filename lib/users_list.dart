@@ -32,8 +32,9 @@ class _UsersListPageState extends State<UsersListPage> {
               return const Text('Error');
             } else if (snapshot.hasData) {
               return ListView.builder(
+                itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) => ListTile(
-                  title: Text(snapshot.data![0].name),
+                  title: Text(snapshot.data![index].name),
                 ),
               );
             } else {
